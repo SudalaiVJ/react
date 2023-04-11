@@ -1,0 +1,14 @@
+FROM ubuntu:latest AS developement	
+#FROM node:14 
+#ENV NODE_ENV development
+RUN apt-get update -y
+RUN apt-get install -y node.js 
+ENV NODE_ENV development
+RUN apt-get install -y curl
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+#RUN apt-get install -y nvm
+RUN apt-get install -y npm
+WORKDIR /myreact
+COPY ./package.json .
+COPY . .
+CMD npm start
