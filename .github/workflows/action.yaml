@@ -51,7 +51,7 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: | 
-          ls react-demo/
+          cd react-demo/
           
           # show azure account being used
           az account show
