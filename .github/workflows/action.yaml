@@ -26,6 +26,8 @@ jobs:
         cd react-demo
         npm install
         npm run build
+        pwd
+        ls -la
 
     
  
