@@ -40,6 +40,10 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: check pwd
+      run: |
+        pwd
  
     # Deploy to storage using CLI
     - name: Deploy to storage using CLI
@@ -50,6 +54,7 @@ jobs:
           ls
           # show azure account being used
           az account show
-          az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s .
+          #az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s .
 
           # az storage account upload
+          az storage blob upload-batch --container-name $web --source build/ --account-name reactdemoui   
