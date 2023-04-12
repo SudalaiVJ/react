@@ -58,5 +58,5 @@ jobs:
           #az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s .
 
           # az storage account upload
-          #az storage blob upload-batch --destination sudalaivj --source /home/runner/work/react/react/react-demo/build/ --account-name reactdemoui   
-          azcopy copy '/home/runner/work/react/react/react-demo/build/*' 'https://reactdemoui.blob.core.windows.net/$web'
+          az storage blob upload-batch --destination https://reactdemoui.blob.core.windows.net/$web --source /home/runner/work/react/react/react-demo/build/ --account-name reactdemoui   
+          #azcopy copy '/home/runner/work/react/react/react-demo/build/*' 'https://reactdemoui.blob.core.windows.net/$web'
