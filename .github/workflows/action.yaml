@@ -9,8 +9,8 @@ env:
   AZURE_RESOURCE_GROUP: react-demo
   BLOB_STORAGE_ACCOUNT_NAME: reactdemoui
  
-jobs:
-  build & deploy:
+job:
+  build&deploy:
     name: Build
     runs-on: ubuntu-latest
     steps:
