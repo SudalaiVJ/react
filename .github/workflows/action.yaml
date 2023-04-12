@@ -10,7 +10,7 @@ env:
   BLOB_STORAGE_ACCOUNT_NAME: reactdemoui
  
 jobs:
-  build:
+  build & deploy:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -31,11 +31,6 @@ jobs:
 
     
  
-  deploy:
-    needs: build
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
  
     # Authentication
     - name: Authenticate with Azure
@@ -47,7 +42,7 @@ jobs:
       run: |
          pwd
          ls
-         cd react-demo/build
+  
  
     # Deploy to storage using CLI
     - name: Deploy to storage using CLI
