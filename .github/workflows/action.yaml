@@ -43,7 +43,9 @@ jobs:
 
     - name: check pwd
       run: |
-        pwd
+         pwd
+         ls
+         cd react-demo/build
  
     # Deploy to storage using CLI
     - name: Deploy to storage using CLI
