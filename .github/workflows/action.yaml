@@ -50,5 +50,6 @@ jobs:
           ls
           # show azure account being used
           az account show
+          az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s .
+
           # az storage account upload
-          az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} -s wwwroot -d \$web 
