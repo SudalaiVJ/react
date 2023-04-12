@@ -51,8 +51,8 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: | 
-          ls
-          cd react-demo
+          ls react-demo/
+          
           # show azure account being used
           az account show
           #az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s .
