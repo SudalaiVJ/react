@@ -7,7 +7,7 @@ on:
  
 env:
   AZURE_RESOURCE_GROUP: react-demo
-  BLOB_STORAGE_ACCOUNT_NAME: reactdemoui
+  BLOB_STORAGE_ACCOUNT_NAME: hellodemo12
  
 jobs:
   build:
@@ -58,5 +58,7 @@ jobs:
           #az storage blob upload-batch --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s .
 
           # az storage account upload
-          az storage blob upload-batch --destination https://reactdemoui.blob.core.windows.net/$web --source /home/runner/work/react/react/react-demo/build/ --account-name reactdemoui   
+          #az storage blob upload-batch --destination https://reactdemoui.blob.core.windows.net/$web --source /home/runner/work/react/react/react-demo/build/ --account-name reactdemoui   
           #azcopy copy '/home/runner/work/react/react/react-demo/build/*' 'https://reactdemoui.blob.core.windows.net/$web'
+          az storage blob service-properties update --account-name hellodemo12 --static-website --404-document error.html --index-document index.html
+          az storage blob upload-batch --account-name hellodemo12 --source /home/runner/work/react/react/react-demo/build/ --destination '$web'
